@@ -469,12 +469,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Funcionalidade Gemini (existente, mantém como está)
-    // async function gerarDescricaoComGemini() { ... }
-    // if (btnGerarDescricao) { btnGerarDescricao.addEventListener('click', gerarDescricaoComGemini); }
-
-    // NOTA: O antigo código de modo escuro/claro com `localStorage.setItem('temaRenove', ...)` e a alternância de `body.classList.toggle('modo-escuro'); body.classList.toggle('modo-claro');` deve ser REMOVIDO ou substituído pela nova função `aplicarTema`.
-    // A função `botaoModo.addEventListener` antiga foi removida.
 });
 
 
