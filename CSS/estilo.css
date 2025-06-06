@@ -376,7 +376,7 @@ body.theme-escuro-roxo .popup-produto-img {
 .popup-produto-detalhes .popup-produto-preco { font-size: 0.9rem; color: var(--cor-primaria); font-weight: bold; margin: 0; }
 
 .botao-popup-ver-carrinho {
-    display: block; width: 100%; background-color: #6c757d; color: white;
+    display: block; width: 100%; var(--cor-primaria); color: white;
     text-align: center; padding: 10px; border-radius: 6px; text-decoration: none;
     font-size: 0.9rem; transition: background-color 0.2s;
 }
