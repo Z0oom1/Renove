@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos Renove</title>
+    <link rel="stylesheet" href="/CSS/estilo.css">
+    <link rel="stylesheet" href="/CSS/produtos.css">
+    <link rel="stylesheet" href="/CSS/estilo.css"> <script src="/JS/script.js" defer></script> </head>
+</head>
+<body>
+ <!-- LOADING -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <svg class="pill-loader-svg" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+        <path class="pill-half-filled" d="M50 0 L15 0 A15 15 0 0 0 15 30 L50 30 Z" />
+        <path class="pill-half-outline" d="M50 0 L85 0 A15 15 0 0 1 85 30 L50 30 Z" />
+    </svg>
+</div>
+<!-- LOADING -->
+    
+
+
+<header class="barra-navegacao">
+        <div class="logo">
+            <a href="inicio.html" style="cursor: pointer;">
+                <img src="/Imgs/logotipo.png" alt="Logo Renove"> </a>
+        </div>
+
+        <form id="formBuscaHeaderGlobal" action="/Pagina de Produtos/produtos.html" method="GET" class="form-busca-no-header">
+            <div class="barra-pesquisa">
+                <input type="text" name="pesquisa" placeholder="O que você procura?" >
+            </div>
+        </form>
+
+        <nav style="display: flex; align-items: center;">
+            <ul class="menu-navegacao">
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li id="nav-registrar"><a href="/Pagina de login/cadastrar.html">Registrar</a></li>
+                <li id="nav-login"><a href="/Pagina de login/login.html">Login</a></li>
+                </ul>
+
+            <div style="position: relative; margin-left: 15px;">
+                <button class="botao-abrir-temas" id="botaoAbrirTemasPopup" aria-label="Selecionar tema">
+                    <svg width="256px" height="256px" viewBox="0 0 48.00 48.00" id="b" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" fill="none" stroke-width="3" class="icone-tema"> <g id="SVGRepo_bgCarrier" stroke-width="0"></g> <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g> <g id="SVGRepo_iconCarrier"> <defs> <style>.c{fill:none;stroke-linecap:round;stroke-linejoin:round;}</style> </defs> <path class="c" d="m41.4002,26.829c1.0929-1.0929,1.3734-2.752,.6987-4.1425-1.356-2.7944-3.5771-6.4401-6.936-9.8573-3.5628-3.6245-7.1565-5.7208-9.9318-7.004-1.3664-.6318-2.9803-.3211-4.0448.7434l-12.0146,12.0146c-1.4136,1.4136-1.4136,3.7055,0,5.1191l5.0474,5.0474-7.5446,7.5446c-1.3601,1.3601-1.5606,3.5977-.2733,5.027,1.3728,1.5242,3.7228,1.5701,5.1546.1383l7.6866-7.6866,5.0474,5.0474c1.4136,1.4136,3.7055,1.4136,5.1191,0l11.9914-11.9914Z"></path> <line class="c" x1="13.4895" y1="14.2652" x2="33.7268" y2="34.5025"></line> </g> </svg>
+                </button>
+                <div id="temasPopup" class="temas-popup-flutuante">
+                    <div class="temas-popup-conteudo">
+                        <h4>Selecionar Tema</h4>
+                        <ul class="lista-temas">
+                            <li data-tema="theme-claro">Claro (Padrão)</li>
+                            <li data-tema="theme-escuro">Escuro (Padrão)</li>
+                            <li data-tema="theme-claro-azul">Claro Azul</li>
+                            <li data-tema="theme-claro-roxo">Claro Roxo</li>
+                            <li data-tema="theme-escuro-azul">Escuro Azul</li>
+                            <li data-tema="theme-escuro-roxo">Escuro Roxo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="position: relative; margin-left: 15px;">
+                <a href="#" class="link-carrinho-header" id="iconeCarrinhoParaPopup" aria-label="Ver carrinho de compras">
+                    <svg class="icone-carrinho" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    <span id="contadorItensCarrinho" class="contador-carrinho-header">0</span>
+                </a>
+                <div id="carrinhoPopupExemplo" class="carrinho-popup-flutuante">
+                    <div class="carrinho-popup-conteudo">
+                        <button id="fecharCarrinhoPopupExemplo" class="fechar-popup-carrinho" aria-label="Fechar popup do carrinho">&times;</button>
+                        <h4>Item no Carrinho (Exemplo)</h4>
+                        <div id="popupProdutoInfoExemplo">
+                            <img src="/Imgs/P1 - Far away.png" alt="Far Away Original Deo Parfum" class="popup-produto-img" id="popupImagemProduto">
+                            <div class="popup-produto-detalhes">
+                                <h4 id="popupNomeProduto">Far Away Original Deo Parfum</h4>
+                                <p class="popup-produto-preco" id="popupPrecoProduto">R$ 79,90</p>
+                                <p style="font-size:0.8em; color: #777;" id="popupQuantidadeProduto">Quantidade: 1</p>
+                                <p style="font-size:0.8em; color: #555; display:none;" id="popupDescricaoOriginalProduto">Deo Parfum feminino floral adocicado.</p>
+                            </div>
+                        </div>
+                        <a href="/Pagina_Carrinho/carrinho.html" class="botao-popup-ver-carrinho"><b>Ver Carrinho Completo</b></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <button class="menu-hamburguer" onclick="alternarMenu()">☰</button>
+    </header>
+
+    <div class="conteudo-principal pagina-produtos">
+    <aside class="barra-lateral-filtros">
+        <h2>Filtros</h2>
+
+        <div class="filtro-grupo">
+            <h3>Buscar por Nome</h3>
+            <div class="filtro-busca-local">
+                <input type="search" id="buscaLocalProdutos" placeholder="Digite o nome do produto...">
+                </div>
+        </div>
+
+        <div class="filtro-grupo" id="containerFiltroCategoria">
+            <h3>Categoria</h3>
+            </div>
+
+        <div class="filtro-grupo" id="containerFiltroPreco">
+            <h3>Faixa de Preço</h3>
+            <div>
+                <input type="checkbox" id="preco-faixa1" name="preco" data-min="0" data-max="50">
+                <label for="preco-faixa1">Até R$ 50,00</label>
+            </div>
+            <div>
+                <input type="checkbox" id="preco-faixa2" name="preco" data-min="50.01" data-max="100">
+                <label for="preco-faixa2">R$ 50,01 - R$ 100,00</label>
+            </div>
+            <div>
+                <input type="checkbox" id="preco-faixa3" name="preco" data-min="100.01" data-max="200">
+                <label for="preco-faixa3">R$ 100,01 - R$ 200,00</label>
+            </div>
+            <div>
+                <input type="checkbox" id="preco-faixa4" name="preco" data-min="200.01" data-max="Infinity">
+                <label for="preco-faixa4">Acima de R$ 200,00</label>
+            </div>
+        </div>
+        
+        <button id="btnLimparFiltros" class="botao-limpar-filtros">Limpar Filtros</button>
+
+    </aside>
+
+    <section class="lista-produtos-area">
+        <div class="opcoes-listagem">
+            <p id="contadorProdutosVisiveis">Exibindo X produtos</p>
+            <div class="ordenacao-container">
+                <label for="ordenarPor">Ordenar por:</label>
+                <select id="ordenarPor">
+                    <option value="padrao">Padrão</option>
+                    <option value="nome-asc">Nome (A-Z)</option>
+                    <option value="nome-desc">Nome (Z-A)</option>
+                    <option value="preco-asc">Preço (Menor para Maior)</option>
+                    <option value="preco-desc">Preço (Maior para Menor)</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="areaProdutos" class="categorias">
+            </div>
+    </section>
+</div>
+
+
+<footer class="rodape">
+        <p>&copy; 2025 Renove Farmácia - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

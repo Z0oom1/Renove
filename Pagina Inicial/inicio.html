@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/Imgs/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renove Farmácia</title>
+    <link rel="stylesheet" href="/CSS/estilo.css">
+    <script src="/JS/script.js" defer></script>
+</head>
+
+<body>
+ <!-- LOADING -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <svg class="pill-loader-svg" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+        <path class="pill-half-filled" d="M50 0 L15 0 A15 15 0 0 0 15 30 L50 30 Z" />
+        <path class="pill-half-outline" d="M50 0 L85 0 A15 15 0 0 1 85 30 L50 30 Z" />
+    </svg>
+</div>
+<!-- LOADING -->
+
+
+
+    <header class="barra-navegacao">
+        <div class="logo">
+            <a href="inicio.html" style="cursor: pointer;">
+                <img src="/Imgs/logotipo.png" alt="Logo Renove"> </a>
+        </div>
+
+        <form id="formBuscaHeaderGlobal" action="/Pagina de Produtos/produtos.html" method="GET"
+            class="form-busca-no-header">
+            <div class="barra-pesquisa">
+                <input type="text" name="pesquisa" placeholder="O que você procura?">
+            </div>
+        </form>
+
+        <nav style="display: flex; align-items: center;">
+            <ul class="menu-navegacao">
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li id="nav-registrar"><a href="/Pagina de login/cadastrar.html">Registrar</a></li>
+                <li id="nav-login"><a href="/Pagina de login/login.html">Login</a></li>
+            </ul>
+
+            <div style="position: relative; margin-left: 15px;">
+                <button class="botao-abrir-temas" id="botaoAbrirTemasPopup" aria-label="Selecionar tema">
+                    <svg width="256px" height="256px" viewBox="0 0 48.00 48.00" id="b"
+                        xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" fill="none" stroke-width="3"
+                        class="icone-tema">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <defs>
+                                <style>
+                                    .c {
+                                        fill: none;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                    }
+                                </style>
+                            </defs>
+                            <path class="c"
+                                d="m41.4002,26.829c1.0929-1.0929,1.3734-2.752,.6987-4.1425-1.356-2.7944-3.5771-6.4401-6.936-9.8573-3.5628-3.6245-7.1565-5.7208-9.9318-7.004-1.3664-.6318-2.9803-.3211-4.0448.7434l-12.0146,12.0146c-1.4136,1.4136-1.4136,3.7055,0,5.1191l5.0474,5.0474-7.5446,7.5446c-1.3601,1.3601-1.5606,3.5977-.2733,5.027,1.3728,1.5242,3.7228,1.5701,5.1546.1383l7.6866-7.6866,5.0474,5.0474c1.4136,1.4136,3.7055,1.4136,5.1191,0l11.9914-11.9914Z">
+                            </path>
+                            <line class="c" x1="13.4895" y1="14.2652" x2="33.7268" y2="34.5025"></line>
+                        </g>
+                    </svg>
+                </button>
+                <div id="temasPopup" class="temas-popup-flutuante">
+                    <div class="temas-popup-conteudo">
+                        <h4>Selecionar Tema</h4>
+                        <ul class="lista-temas">
+                            <li data-tema="theme-claro">Claro (Padrão)</li>
+                            <li data-tema="theme-escuro">Escuro (Padrão)</li>
+                            <li data-tema="theme-claro-azul">Claro Azul</li>
+                            <li data-tema="theme-claro-roxo">Claro Roxo</li>
+                            <li data-tema="theme-escuro-azul">Escuro Azul</li>
+                            <li data-tema="theme-escuro-roxo">Escuro Roxo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="position: relative; margin-left: 15px;">
+                <a href="#" class="link-carrinho-header" id="iconeCarrinhoParaPopup"
+                    aria-label="Ver carrinho de compras">
+                    <svg class="icone-carrinho" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>
+                    <span id="contadorItensCarrinho" class="contador-carrinho-header">0</span>
+                </a>
+                <div id="carrinhoPopupExemplo" class="carrinho-popup-flutuante">
+                    <div class="carrinho-popup-conteudo">
+                        <button id="fecharCarrinhoPopupExemplo" class="fechar-popup-carrinho"
+                            aria-label="Fechar popup do carrinho">&times;</button>
+                        <h4>Item no Carrinho (Exemplo)</h4>
+                        <div id="popupProdutoInfoExemplo">
+                            <img src="/Imgs/P1 - Far away.png" alt="Far Away Original Deo Parfum"
+                                class="popup-produto-img" id="popupImagemProduto">
+                            <div class="popup-produto-detalhes">
+                                <h4 id="popupNomeProduto">Far Away Original Deo Parfum</h4>
+                                <p class="popup-produto-preco" id="popupPrecoProduto">R$ 79,90</p>
+                                <p style="font-size:0.8em; color: #777;" id="popupQuantidadeProduto">Quantidade: 1</p>
+                                <p style="font-size:0.8em; color: #555; display:none;"
+                                    id="popupDescricaoOriginalProduto">Deo Parfum feminino floral adocicado.</p>
+                            </div>
+                        </div>
+                        <a href="/Pagina_Carrinho/carrinho.html" class="botao-popup-ver-carrinho"><b>Ver Carrinho
+                                Completo</b></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <button class="menu-hamburguer" onclick="alternarMenu()">☰</button>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="banner">
+            <div class="texto-banner">
+                <h1>Cuide de você com a <span>Renove</span></h1>
+                <p>Os melhores cosméticos e cuidados para você</p>
+                <a href="#" class="botao">Ver ofertas</a>
+            </div>
+            <div class="imagem-banner">
+                <img src="/Imgs/banner.png" alt="Produtos Renove">
+            </div>
+        </section>
+<div class="secao-divisor-ondulado">
+    <svg class="onda-svg" viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,50 C360,0 1080,100 1440,50 L1440,100 C1080,150 360,50 0,100 Z" />
+</svg>
+</div>
+<style>
+  
+
+.secao-divisor-ondulado {
+    width: 100%;
+    line-height: 0;
+}
+
+.onda-svg {
+    display: block;
+    width: 100%;
+    height: 300px;  
+    margin-top: -80px;
+    margin-bottom: -80px;
+}
+
+.onda-svg path {
+    fill: var(--cor-primaria);
+    filter: drop-shadow(0 2px 8px var(--sombra));
+}
+ </style> <!--estilo das ondas -->
+
+
+
+
+        <section class="categorias">
+            <div class="cartao-produto">
+                <img src="/Imgs/P1 - Far away.png" alt="Far Away Deo Parfum" />
+                <h3>Far Away Deo Parfum</h3>
+                <p class="descricao">Deo Parfum feminino floral adocicado.</p>
+                <p class="preco">R$ 79,90</p>
+                <a href="compra.html?id=1" class="botao btn-adicionar-carrinho-lista" data-id-produto-lista="1">
+                    <svg width="18px" height="18px" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M2.08416 2.7512C2.22155 2.36044 2.6497 2.15503 3.04047 2.29242L3.34187 2.39838C3.95839 2.61511 4.48203 2.79919 4.89411 3.00139C5.33474 3.21759 5.71259 3.48393 5.99677 3.89979C6.27875 4.31243 6.39517 4.76515 6.4489 5.26153C6.47295 5.48373 6.48564 5.72967 6.49233 6H17.1305C18.8155 6 20.3323 6 20.7762 6.57708C21.2202 7.15417 21.0466 8.02369 20.6995 9.76275L20.1997 12.1875C19.8846 13.7164 19.727 14.4808 19.1753 14.9304C18.6236 15.38 17.8431 15.38 16.2821 15.38H10.9792C8.19028 15.38 6.79583 15.38 5.92943 14.4662C5.06302 13.5523 4.99979 12.5816 4.99979 9.64L4.99979 7.03832C4.99979 6.29837 4.99877 5.80316 4.95761 5.42295C4.91828 5.0596 4.84858 4.87818 4.75832 4.74609C4.67026 4.61723 4.53659 4.4968 4.23336 4.34802C3.91052 4.18961 3.47177 4.03406 2.80416 3.79934L2.54295 3.7075C2.15218 3.57012 1.94678 3.14197 2.08416 2.7512Z">
+                            </path>
+                            <path
+                                d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z">
+                            </path>
+                            <path
+                                d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z">
+                            </path>
+                        </g>
+                    </svg>
+                    Comprar
+                </a>
+            </div>
+
+            <div class="cartao-produto">
+                <img src="/Imgs/P2 - Floratablue.png" alt="Floratta Blue Colônia" />
+                <h3>Floratta Blue Colônia</h3>
+                <p class="descricao">Fragrância feminina floral musk.</p>
+                <p class="preco">R$ 139,90</p>
+                <a href="compra.html?id=2" class="botao btn-adicionar-carrinho-lista" data-id-produto-lista="2">
+                    <svg width="18px" height="18px" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M2.08416 2.7512C2.22155 2.36044 2.6497 2.15503 3.04047 2.29242L3.34187 2.39838C3.95839 2.61511 4.48203 2.79919 4.89411 3.00139C5.33474 3.21759 5.71259 3.48393 5.99677 3.89979C6.27875 4.31243 6.39517 4.76515 6.4489 5.26153C6.47295 5.48373 6.48564 5.72967 6.49233 6H17.1305C18.8155 6 20.3323 6 20.7762 6.57708C21.2202 7.15417 21.0466 8.02369 20.6995 9.76275L20.1997 12.1875C19.8846 13.7164 19.727 14.4808 19.1753 14.9304C18.6236 15.38 17.8431 15.38 16.2821 15.38H10.9792C8.19028 15.38 6.79583 15.38 5.92943 14.4662C5.06302 13.5523 4.99979 12.5816 4.99979 9.64L4.99979 7.03832C4.99979 6.29837 4.99877 5.80316 4.95761 5.42295C4.91828 5.0596 4.84858 4.87818 4.75832 4.74609C4.67026 4.61723 4.53659 4.4968 4.23336 4.34802C3.91052 4.18961 3.47177 4.03406 2.80416 3.79934L2.54295 3.7075C2.15218 3.57012 1.94678 3.14197 2.08416 2.7512Z">
+                            </path>
+                            <path
+                                d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z">
+                            </path>
+                            <path
+                                d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z">
+                            </path>
+                        </g>
+                    </svg>
+                    Comprar
+                </a>
+            </div>
+
+            <div class="cartao-produto">
+                <img src="/Imgs/P3 - hypnose.png" alt="Hypnôse Parfum" />
+                <h3>Hypnôse Parfum</h3>
+                <p class="descricao">Perfume feminino amadeirado oriental.</p>
+                <p class="preco">R$ 349,90</p>
+                <a href="compra.html?id=3" class="botao btn-adicionar-carrinho-lista" data-id-produto-lista="3"> <svg
+                        width="18px" height="18px" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M2.08416 2.7512C2.22155 2.36044 2.6497 2.15503 3.04047 2.29242L3.34187 2.39838C3.95839 2.61511 4.48203 2.79919 4.89411 3.00139C5.33474 3.21759 5.71259 3.48393 5.99677 3.89979C6.27875 4.31243 6.39517 4.76515 6.4489 5.26153C6.47295 5.48373 6.48564 5.72967 6.49233 6H17.1305C18.8155 6 20.3323 6 20.7762 6.57708C21.2202 7.15417 21.0466 8.02369 20.6995 9.76275L20.1997 12.1875C19.8846 13.7164 19.727 14.4808 19.1753 14.9304C18.6236 15.38 17.8431 15.38 16.2821 15.38H10.9792C8.19028 15.38 6.79583 15.38 5.92943 14.4662C5.06302 13.5523 4.99979 12.5816 4.99979 9.64L4.99979 7.03832C4.99979 6.29837 4.99877 5.80316 4.95761 5.42295C4.91828 5.0596 4.84858 4.87818 4.75832 4.74609C4.67026 4.61723 4.53659 4.4968 4.23336 4.34802C3.91052 4.18961 3.47177 4.03406 2.80416 3.79934L2.54295 3.7075C2.15218 3.57012 1.94678 3.14197 2.08416 2.7512Z">
+                            </path>
+                            <path
+                                d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z">
+                            </path>
+                            <path
+                                d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z">
+                            </path>
+                        </g>
+                    </svg>
+                    Comprar
+                </a>
+            </div>
+
+            <div class="cartao-produto">
+                <img src="/Imgs/P4 - lily.png" alt="Lily Leite Acetinado" />
+                <h3>Lily Leite Acetinado</h3>
+                <p class="descricao">Hidratação intensa com toque aveludado.</p>
+                <p class="preco">R$ 109,90</p>
+                <a href="compra.html?id=4" class="botao btn-adicionar-carrinho-lista" data-id-produto-lista="4"> <svg
+                        width="18px" height="18px" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M2.08416 2.7512C2.22155 2.36044 2.6497 2.15503 3.04047 2.29242L3.34187 2.39838C3.95839 2.61511 4.48203 2.79919 4.89411 3.00139C5.33474 3.21759 5.71259 3.48393 5.99677 3.89979C6.27875 4.31243 6.39517 4.76515 6.4489 5.26153C6.47295 5.48373 6.48564 5.72967 6.49233 6H17.1305C18.8155 6 20.3323 6 20.7762 6.57708C21.2202 7.15417 21.0466 8.02369 20.6995 9.76275L20.1997 12.1875C19.8846 13.7164 19.727 14.4808 19.1753 14.9304C18.6236 15.38 17.8431 15.38 16.2821 15.38H10.9792C8.19028 15.38 6.79583 15.38 5.92943 14.4662C5.06302 13.5523 4.99979 12.5816 4.99979 9.64L4.99979 7.03832C4.99979 6.29837 4.99877 5.80316 4.95761 5.42295C4.91828 5.0596 4.84858 4.87818 4.75832 4.74609C4.67026 4.61723 4.53659 4.4968 4.23336 4.34802C3.91052 4.18961 3.47177 4.03406 2.80416 3.79934L2.54295 3.7075C2.15218 3.57012 1.94678 3.14197 2.08416 2.7512Z">
+                            </path>
+                            <path
+                                d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z">
+                            </path>
+                            <path
+                                d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z">
+                            </path>
+                        </g>
+                    </svg>
+                    Comprar
+                </a>
+            </div>
+        </section>
+
+    </main>
+<div class="secao-divisor-ondulado">
+    <svg class="onda-svg" viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,50 C360,0 1080,100 1440,50 L1440,100 C1080,150 360,50 0,100 Z" />
+</svg>  
+</div>
+
+
+    <footer class="rodape">
+        <p>&copy; 2025 Renove Farmácia - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+
+</html>

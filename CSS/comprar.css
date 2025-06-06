@@ -1,0 +1,293 @@
+/* ---------- PÁGINA DE COMPRA (Produto Detalhe) ---------- */
+
+.pagina-compra .detalhes-produto {
+    margin: 40px 80px 0px 80px;
+    display: flex;
+    gap: 2.5rem;
+    background-color: var(--cor-cartao);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px var(--sombra);
+    margin-bottom: 3rem;
+}
+
+.coluna-galeria-produto {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.imagem-principal-wrapper {
+    position: relative;
+    background-color: var(--cor-fundo);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+}
+.modo-escuro .imagem-principal-wrapper {
+    background-color: #2c2c2c;
+    border-color: #444;
+}
+
+#imagemPrincipalProduto {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+}
+
+.nav-galeria {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.35);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out;
+    z-index: 10;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-galeria:hover {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+.prev-galeria {
+    left: 15px;
+}
+.next-galeria {
+    right: 15px;
+}
+
+.thumbnails-produto-wrapper {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-primaria) var(--cor-cartao);
+}
+.thumbnails-produto-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+.thumbnails-produto-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--cor-primaria);
+    border-radius: 10px;
+    border: 2px solid var(--cor-cartao);
+}
+.modo-escuro .thumbnails-produto-wrapper::-webkit-scrollbar-thumb {
+    border: 2px solid #2c2c2c;
+}
+
+.thumbnails-produto {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    padding: 0.5rem 0;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.thumbnail-item {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0.65;
+}
+
+.thumbnail-item:hover {
+    opacity: 1;
+}
+
+.thumbnail-item.active-thumbnail {
+    border-color: var(--cor-primaria);
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(var(--cor-primaria-rgb, 0, 119, 250), 0.5);
+}
+
+.pagina-compra .info-produto {
+    flex: 1;
+    padding-left: 1.5rem;
+}
+
+.pagina-compra .info-produto h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--cor-texto);
+    line-height: 1.2;
+}
+
+.pagina-compra .info-produto .preco {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.opcoes-compra {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sombra);
+}
+
+.quantidade-produto {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.quantidade-produto label {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.quantidade-produto input[type="number"] {
+    width: 70px;
+    padding: 0.6rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.modo-escuro .quantidade-produto input[type="number"] {
+    background-color: #3a3a3a;
+    color: var(--cor-texto);
+    border-color: #555;
+}
+
+.pagina-compra .acoes-produto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.pagina-compra .acoes-produto .btn-comprar.principal {
+    font-size: 1.1rem;
+    padding: 0.9rem 1.5rem;
+}
+
+
+
+.subtitulo-descricao {
+    font-size: 1.3rem;
+    color: var(--cor-texto);
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.pagina-compra .descricao-produto p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--cor-texto);
+}
+
+.pagina-compra .recomendacoes-produto {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--sombra);
+}
+
+.pagina-compra .recomendacoes-produto .subtitulo-secao {
+    font-size: 1.6rem;
+    color: var(--cor-texto);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pagina-compra .lista-recomendacoes {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.pagina-compra .lista-recomendacoes .cartao-produto {
+    flex: 0 0 auto;
+    width: 200px;
+}
+.pagina-compra .lista-recomendacoes .cartao-produto .btn-comprar.mini {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+}
+
+@media (max-width: 992px) {
+    .pagina-compra .detalhes-produto {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .coluna-galeria-produto {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .pagina-compra .info-produto {
+        padding-left: 0;
+    }
+    .imagem-principal-wrapper {
+        min-height: 300px;
+    }
+    #imagemPrincipalProduto {
+        max-height: 400px;
+    }
+    .thumbnails-produto {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .pagina-compra .info-produto h1 {
+        font-size: 1.9rem;
+    }
+    .pagina-compra .info-produto .preco {
+        font-size: 1.6rem;
+    }
+    .nav-galeria {
+        padding: 0.5rem 0.8rem;
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
+    .prev-galeria { left: 10px; }
+    .next-galeria { right: 10px; }
+
+    .thumbnail-item {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 480px) {
+     .pagina-compra .info-produto h1 {
+        font-size: 1.6rem;
+    }
+    .pagina-compra .info-produto .preco {
+        font-size: 1.4rem;
+    }
+    .pagina-compra .acoes-produto .btn-comprar.principal,
+    .pagina-compra .acoes-produto  {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+    }
+    .subtitulo-descricao,
+    .pagina-compra .recomendacoes-produto .subtitulo-secao {
+        font-size: 1.2rem;
+    }
+}
