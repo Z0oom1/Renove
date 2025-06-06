@@ -469,7 +469,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0e230231291432ec930d710c2c1cb1432e3b014f
 });
 
 
